@@ -46,9 +46,11 @@ for record in genes:
 
     length = record.length
     name = str(record.name)
+    start = int(record.start)
+    end = int(record.end)
     GC_percent = GC_content(chrom, record.start, record.end)
 
-    fw.write('%s\t%s\t%d\t%f\n' %(chrom, name, length, GC_percent))
+    fw.write('%s\t%d\t%d\t%s\t%d\t%f\n' %(chrom, start, end, name, length, GC_percent))
 
 fw.close()
 #---------------------
